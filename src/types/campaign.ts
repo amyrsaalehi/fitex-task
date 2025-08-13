@@ -5,3 +5,5 @@ export type Campaign = {
   name: string;
   installs: DayValuePair[];
 };
+
+export type CampaignResponse = Campaign[];
