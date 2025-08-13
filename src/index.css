@@ -7,3 +7,12 @@ body {
     overflow-x: hidden;
     font-family: 'Inter', sans-serif;
 }
+
+.animate-rotate {
+    0% {
+        rotate: 0deg;
+    }
+    100% {
+        rotate: 360deg;
+    }
+}
