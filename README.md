@@ -1,69 +1,98 @@
-# React + TypeScript + Vite
+# Fitex Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern React dashboard application built with TypeScript, Vite, and Tailwind CSS for managing marketing campaigns and viewing analytics.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Campaign Management**: Create and view marketing campaigns
+- **Analytics Dashboard**: Interactive charts showing installs and revenue data
+- **Dynamic Imports**: Optimized loading with code splitting for better performance
+- **Responsive Design**: Mobile-first approach with Tailwind CSS
+- **Type Safety**: Full TypeScript support with Zod validation
+- **Modern React**: Uses React 19 features and React Query for data management
 
-## Expanding the ESLint configuration
+## 🛠 Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Frontend**: React 19, TypeScript, Vite
+- **Styling**: Tailwind CSS 4.x
+- **Data Visualization**: Recharts
+- **Form Management**: React Hook Form with Zod validation
+- **State Management**: TanStack Query (React Query)
+- **Routing**: React Router DOM v7
+- **Package Manager**: pnpm
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 📦 Installation
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   pnpm install
+   ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+3. Start the development server:
+   ```bash
+   pnpm dev
+   ```
+
+4. Build for production:
+   ```bash
+   pnpm build
+   ```
+
+## 🏗 Project Structure
+
+```
+src/
+├── api/              # API layer and HTTP client
+├── components/       # Reusable UI components
+│   └── ui/          # Basic UI components (Card, Spinner)
+├── contexts/        # React contexts
+├── hooks/           # Custom React hooks
+├── mock/            # Mock data for development
+├── pages/           # Page components
+├── providers/       # Context providers
+├── types/           # TypeScript type definitions
+├── App.tsx          # Main app component
+├── main.tsx         # Application entry point
+└── router.tsx       # Route definitions
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📱 Pages
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Overview Page
+- Displays weekly analytics with area charts
+- Shows installs and revenue trends
+- Dynamically loads chart components
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Campaigns Page
+- Lists all marketing campaigns
+- Interactive bar charts for campaign performance
+- Campaign selection dropdown
+
+### Create Campaign Page
+- Form for creating new campaigns
+- Real-time validation with Zod
+- Duplicate name prevention
+
+## 🔧 Development
+
+### Scripts
+
+- `pnpm dev` - Start development server
+- `pnpm build` - Build for production
+- `pnpm lint` - Run ESLint
+- `pnpm preview` - Preview production build
+
+### Code Quality
+
+- ESLint configuration with TypeScript support
+- Prettier for code formatting
+- Type-safe API calls with Zod validation
+- Consistent component patterns
+
+## 📐 Architecture Patterns
+
+- **Component Composition**: Reusable UI components
+- **Custom Hooks**: Business logic extraction
+- **Type-First Development**: TypeScript and Zod schemas
+- **Separation of Concerns**: Clear API, UI, and business logic layers
