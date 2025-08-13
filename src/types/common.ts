@@ -10,11 +10,11 @@ export const DaySchema = z.enum([
   "friday",
 ]);
 
+export type Day = z.infer<typeof DaySchema>;
+
 export const DayValuePairSchema = z.object({
   day: DaySchema,
   value: z.number().nonnegative(),
 });
-
-export type Day = z.infer<typeof DaySchema>;
 
 export type DayValuePair = z.infer<typeof DayValuePairSchema>;
