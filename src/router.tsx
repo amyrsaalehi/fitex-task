@@ -1,8 +1,9 @@
 import { createBrowserRouter } from 'react-router-dom';
 import AppLayout from './components/layout';
-import OverviewPage from './pages/overview-page';
-import CampaignsPage from './pages/campaign-page';
-import CreateCampaignPage from './pages/create-campaign-page';
+import { lazy } from 'react';
+const OverviewPage = lazy(() => import('./pages/overview-page'));
+const CampaignsPage = lazy(() => import('./pages/campaign-page'));
+const CreateCampaignPage = lazy(() => import('./pages/create-campaign-page'));
 
 export const router = createBrowserRouter([
   {
