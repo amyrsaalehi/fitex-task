@@ -5,7 +5,7 @@ export default function NavTabs() {
   const active = 'bg-black text-white';
 
   return (
-    <nav className="w-full flex gap-2 mb-6 whitespace-nowrap overflow-auto pe-8">
+    <nav className="w-full flex gap-2 mb-6 whitespace-nowrap overflow-auto pe-8 pb-2">
       <NavLink
         to="/"
         end
