@@ -1,13 +1,15 @@
 export default function Card({
   title,
   children,
+  className,
 }: {
   title?: string;
   children: React.ReactNode;
+  className?: string;
 }) {
   return (
     <section
-      className="bg-white border-1 border-slate-400 rounded-2xl p-4 shadow-xl"
+      className={`bg-white border-1 border-slate-400 rounded-2xl p-4 shadow-xl ${className ? ` ${className}` : ''}`}
       aria-label={title}
     >
       {title && (
