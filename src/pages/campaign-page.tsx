@@ -13,11 +13,11 @@ import { CampaignsResponseSchema } from '../types/campaign';
 import Card from '../components/ui/card';
 import Spinner from '../components/ui/spinner';
 import { useCampaignSelection } from '../hooks/use-campaign-selection';
-import { campaign as mock } from '../mock/campaign';
+// import { campaign as mockData } from '../mock/campaign';
 
 export default function CampaignsPage() {
   const { data, isLoading, error } = useQuery({
-    initialData: mock,
+    // initialData: mock,
     queryKey: ['campaigns'],
     queryFn: async () =>
       CampaignsResponseSchema.parse(await api.getCampaigns()),

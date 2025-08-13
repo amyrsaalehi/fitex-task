@@ -2,10 +2,10 @@ import { useQuery } from '@tanstack/react-query';
 import { api } from '../api/http';
 import {
   OverviewResponseSchema,
-  type OverviewResponse,
+  // type OverviewResponse,
 } from '../types/overview';
 import type { Day, DayValuePair } from '../types/common';
-import { overview } from '../mock/overview';
+// import { overview } from '../mock/overview';
 
 const order: Day[] = [
   'monday',
@@ -36,7 +36,7 @@ function helperMerge(installs: DayValuePair[], revenue: DayValuePair[]) {
 export function useOverview() {
   return useQuery({
     queryKey: ['overview'],
-    initialData: overview as OverviewResponse,
+    // initialData: overview as OverviewResponse,
     queryFn: async () => OverviewResponseSchema.parse(await api.getOverview()),
     select: (data) => ({
       raw: data,
