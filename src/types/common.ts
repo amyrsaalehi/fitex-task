@@ -1,13 +1,20 @@
-export type Day =
-  | "saturday"
-  | "sunday"
-  | "monday"
-  | "tuesday"
-  | "wednesday"
-  | "thursday"
-  | "friday";
+import { z } from "zod";
 
-export type DayValuePair = {
-  day: Day;
-  value: number;
-};
+export const DaySchema = z.enum([
+  "saturday",
+  "sunday",
+  "monday",
+  "tuesday",
+  "wednesday",
+  "thursday",
+  "friday",
+]);
+
+export const DayValuePairSchema = z.object({
+  day: DaySchema,
+  value: z.number().nonnegative(),
+});
+
+export type Day = z.infer<typeof DaySchema>;
+
+export type DayValuePair = z.infer<typeof DayValuePairSchema>;
