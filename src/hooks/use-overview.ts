@@ -1,6 +1,9 @@
 import { useQuery } from '@tanstack/react-query';
 import { api } from '../api/http';
-import { OverviewResponseSchema } from '../types/overview';
+import {
+  OverviewResponseSchema,
+  type OverviewResponse,
+} from '../types/overview';
 import type { Day, DayValuePair } from '../types/common';
 import { overview } from '../mock/overview';
 
@@ -33,7 +36,7 @@ function helperMerge(installs: DayValuePair[], revenue: DayValuePair[]) {
 export function useOverview() {
   return useQuery({
     queryKey: ['overview'],
-    initialData: overview,
+    initialData: overview as OverviewResponse,
     queryFn: async () => OverviewResponseSchema.parse(await api.getOverview()),
     select: (data) => ({
       raw: data,
