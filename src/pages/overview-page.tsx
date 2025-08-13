@@ -16,7 +16,7 @@ export default function OverviewPage() {
 
   if (isLoading)
     return (
-      <Card>
+      <Card className="h-[400px] grid place-items-center">
         <Spinner />
       </Card>
     );
