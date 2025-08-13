@@ -5,13 +5,27 @@ export default function NavTabs() {
   const active = 'bg-black text-white';
 
   return (
-    <nav className="flex gap-2 mb-6">
+    <nav className="w-full flex gap-2 mb-6 whitespace-nowrap overflow-auto pe-8">
       <NavLink
         to="/"
         end
         className={({ isActive }) => `${base} ${isActive ? active : ''}`}
       >
         Overview
+      </NavLink>
+      <NavLink
+        to="/campaigns"
+        end
+        className={({ isActive }) => `${base} ${isActive ? active : ''}`}
+      >
+        Campaigns
+      </NavLink>
+      <NavLink
+        to="/create"
+        end
+        className={({ isActive }) => `${base} ${isActive ? active : ''}`}
+      >
+        Create Campaigns
       </NavLink>
     </nav>
   );
