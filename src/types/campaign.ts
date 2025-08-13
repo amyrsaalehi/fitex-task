@@ -1,5 +1,5 @@
-import { z } from "zod";
-import { DayValuePairSchema } from "./common";
+import { z } from 'zod';
+import { DayValuePairSchema } from './common';
 
 export const CampaignSchema = z.object({
   id: z.string(),
@@ -14,6 +14,6 @@ export const CampaignsResponseSchema = z.array(CampaignSchema);
 export type CampaignResponse = z.infer<typeof CampaignSchema>;
 
 export const CreateCampaignSchema = z.object({
-  name: z.string().min(1, "Name is required"),
+  name: z.string().min(1, 'Name is required'),
 });
 export type CreateCampaignInput = z.infer<typeof CreateCampaignSchema>;
