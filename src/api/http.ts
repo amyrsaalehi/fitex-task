@@ -15,6 +15,6 @@ async function http<T>(path: string, init?: RequestInit): Promise<T> {
 }
 
 export const api = {
-  getoverview: () => http<OverviewResponse>(`/overview`),
-  getcampaigns: () => http<CampaignResponse>(`/campaigns`),
+  getOverview: () => http<OverviewResponse>(`/overview`),
+  getCampaigns: () => http<CampaignResponse>(`/campaigns`),
 };
